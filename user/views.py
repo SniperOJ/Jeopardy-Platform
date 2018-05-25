@@ -1,12 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render
 from django.http import JsonResponse
-from django.contrib.auth import login as django_login
-from django.contrib.auth import authenticate as django_authenticate
-from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect
 
 # def login(request):
 #     username = request.POST['username']
@@ -36,13 +31,12 @@ from django.shortcuts import render, redirect
 #     return JsonResponse(response)
 
 # Import Project lib
-from ..utils.session import clear_session
-from ..utils.form import check_params
+from user.utils.session import clear_session
+from user.utils.form import check_params
 
 from .models import User
 
 # Import System lib
-from datetime import datetime
 
 
 @clear_session
