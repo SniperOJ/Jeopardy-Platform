@@ -108,3 +108,7 @@ venv.bak/
 
 # Migrations
 */migrations/
+
+
+# Captcha Settings
+custom_captcha/settings.py
