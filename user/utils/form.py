@@ -23,7 +23,5 @@ def check_params(params):
                 return JsonResponse(result)
             else:
                 return func(request, *args, **wkargs)
-
         return return_wrapper
-
     return func_wrapper

@@ -28,6 +28,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+APPEND_SLASH = False
+
 PREV_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,7 +49,6 @@ THIRD_APPS = [
     'captcha',
 ]
 
-
 AUTH_USER_MODEL = 'user.User'
 
 INSTALLED_APPS = PREV_APPS + PROJECT_APPS + THIRD_APPS
@@ -56,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -110,6 +111,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'user.utils.user.CustomBackend'
+]
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -127,3 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+
