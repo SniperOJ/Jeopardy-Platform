@@ -1,5 +1,3 @@
 django
-django-simple-captcha
-pillow
-geetest
 requests
+pygit
