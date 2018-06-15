@@ -4,9 +4,9 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class User(AbstractUser):
-    nickname = models.CharField(max_length=0x20, null=False, default="未知", unique=True)
+    nickname = models.CharField(max_length=0x20, null=False, default="", unique=True)
     score = models.PositiveIntegerField(null=False, default=0)
-    university = models.CharField(max_length=0x20, null=False, default="未知")
+    university = models.CharField(max_length=0x20, null=False, default="")
     email = models.EmailField(unique=True)
     register_ip = models.GenericIPAddressField()
     active_code = models.CharField(max_length=0x20, null=True)
